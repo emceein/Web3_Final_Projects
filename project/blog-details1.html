@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Masco HTML Template</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/bootstrap/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .site-header{
+    display: none;
+  }
+  .progress-bar{
+   height: 10px;
+  }
+  .progress-bar-container{
+    height: 10px;
+  }
+  .reading__bar{
+    height: 10px;
+  }
+}
+  </style>
+</head>
+
+<body>
+<div onclick="showloader()">
+  <ul class="preloader-wrapper">
+    <li><img src="img/Spinner-5.gif" alt=""></li>
+  </ul>
+</div>
+  <header class="site-header site-header--transparent site-header--sticky col-md-none bg-white m-0" >
+    <div class="container">
+      <nav class="navbar site-navbar">
+        <div class="menu-block-wrapper">
+          <nav class="menu-block" id="append-menu-header">
+            <ul class="site-menu-main">
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger">Demos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link-item drop-trigger">About Us</a>
+              </li>
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger">Pages
+                </a>
+              </li>
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger">Contact<i class="fas fa-angle-down"></i>
+                </a>
+                <div class="sub-menu" id="submenu-13">
+                  <ul class="sub-menu_list">
+                    <li class="sub-menu_item">
+                      <a href="#">
+                        <span class="menu-item-text">Contact 1</span>
+                      </a>
+                    </li>
+                    <li class="sub-menu_item">
+                      <a href="#">
+                        <span class="menu-item-text">Contact 2</span>
+                      </a>
+                    </li>
+                    <li class="sub-menu_item">
+                      <a href="#">
+                        <span class="menu-item-text">Contact 3</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-cta-btn-wrapper">
+          <div>
+            <button onclick="openModal()" style="padding: 2px 20px"
+              class="btn-masco btn-masco--header btn-masco--header-secondary">login</button>
+          </div>
+
+
+          <!-- modal html -->
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">X</span>
+                <h2>Logout</h2>
+                <div id="main-container" class="centered-flex">
+                    <div class="form-container">
+                      <div class="icon centered-flex"><i class="fa fa-user"></i></div>
+                      <div class="title"></div>
+                      <form id="login-form" class="centered-flex">
+                        <div class="msg"></div>
+                        <div class="field">
+                          <input type="text" placeholder="Number" data-regex="numb" id="numb" />
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="field">
+                          <input type="password" placeholder="Password" data-regex="pass" id="pass" />
+                          <i class="fa fa-lock"></i>
+                        </div>
+                        <div class="action centered-flex">
+                          <label for="remember" class="centered-flex">
+                            <input type="checkbox" id="remember" /> Remember me
+                          </label>
+                          <a href="#">Forget Password ?</a>
+                        </div>
+                        <div class="btn-container"><button id="btn">Login</button></div>
+                        <div class="signup">
+                          Don't have an Account?<a href="#"> Sign up</a>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                
+            </div>
+        </div>
+    
+
+          <!-- end -->
+          <a href="#" class="btn-masco btn-masco--header rounded-pill btn-fill--up">
+            <span>Sign up free</span></a>
+        </div>
+      </nav>
+    </div>
+    <!-- modal -->
+
+    <!-- <div class="container border p-3 text-start" id="modal">
+      <div class="row">
+
+        <div class="col">
+          <div>
+            <h2>Enter your information</h2>
+          </div>
+          <span id="close1">close</span>
+          <div>
+            <label for="">enter your phon number:</label><br />
+            <input type="text" data-regex="phone_number" />
+            <p>phone number is not valid</p>
+          </div>
+          <div>
+            <label for="">enter your email:</label><br />
+            <input type="text" data-regex="email" />
+            <p>email is not valid</p>
+          </div>
+          <div>
+            <label for="">enter your national code:</label><br />
+            <input type="text" data-regex="national_code" />
+            <p>national code is not valid</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- modal -->
+
+    
+  </header>
+
+  <!-- reading -->
+  <div class="reading__bar">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+</div>
+
+  
+
+</div>
+ 
+  <!-- slider -->
+
+  <div class="blog-details_main-section">
+    <div class="inner_banner-section">
+      <div class="container">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active img1">
+              <img src="img/01-photogalleryhero-912d152d.jpg" class="w-100 d-block" alt="First slide" />
+            </div>
+
+            <div class="carousel-item img2">
+              <img src="img/35094__940x_oo_lesaintgeran_fb_la_pointe_bar_sunset_apro.webp" class="w-100 d-block"
+                alt="Third slide" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="blog-details_main-wrapper section-padding-120">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="blog-content">
+              <img src="img/482319135.jpg" alt="blog image" class="mb-30 w-100" />
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="sidebar-single">
+              <div class="sidebar-list">
+                <div class="sidebar-title-block">
+                  <h3 class="sidebar-title">Hotel</h3>
+                </div>
+                <ul class="sidebar-category-list">
+                  <li class="sidebar-category-list-item"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-flex">
+              <a href="https://img.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_105762-1783.jpg"
+                data-group="1" class="galleryItem test"><img src="img/mg4.avif" alt="" style="width: 150px;" /></a>
+
+              <a href="https://watermark.lovepik.com/photo/20211121/large/lovepik-hotel-room-picture_500597052.jpg"
+                data-group="1" class="galleryItem test123 test"><img src="img/mg5.jpg" alt=""
+                  style="width:100px;" /></a>
+            </div>
+            <div class="d-flex">
+              <a href="https://watermark.lovepik.com/photo/20211121/large/lovepik-hotel-room-picture_500597052.jpg"
+                data-group="1" class="galleryItem test123 test"><img src="img/mg5.jpg" alt=""
+                  style="width:100px;" /></a>
+              <a href="https://img.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_105762-1783.jpg"
+                data-group="1" class="galleryItem test"><img src="img/mg4.avif" alt="" style="width: 150px;" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="container bg-success text-white fs-6 text-center rounded-pill p-3" data-aos="fade-up"
+      data-aos-duration="3000">
+      <h4 class="fs-3 m-4">booking your favarite room</h4>
+      <div class="row">
+        <div class="col text-center">
+          <div>plese enter rooms number:</div>
+          <select id="rooms" class="w-50 m-3"></select>
+          <div>plese enter bed size:</div>
+          <select id="services" class="w-50 m-3"></select>
+        </div>
+      </div>
+    </div>
+     
+ <!-- sabad kharid -->
+    <div class="container">
+      <header>
+        <h1>booking rooms</h1>
+        <div class="shopping">
+          <img src="img/images.png" />
+          <span class="quantity">0</span>
+        </div>
+      </header>
+
+      <div class="list"></div>
+    </div>
+    <div class="card">
+      <h1>Card</h1>
+      <ul class="listCard"></ul>
+      <div class="checkOut">
+        <div class="total">0</div>
+        <div class="closeShopping">Close</div>
+      </div>
+    </div>
+    <!-- counterup -->
+   <div class="container m-5 bg-white">
+    <div class="row">
+  <div class="col d-flex justify-content-around p-3" style="border: 1px solid gray;">
+          <div class="cont"> <span class="num">300</span> <span class="fs-4">followers</span> </div>
+        <div class="cont"> <span class="num">150</span> <span class="fs-4">customer</span> </div>
+        <div class="cont"> <span class="num">450</span> <span class="fs-4">like</span> </div>
+
+      </div>
+    </div>
+   </div>
+   <!-- footer -->
+   <div class="footer">
+    <p>Footer</p>
+  </div>
+    <!-- script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="custom.js"></script>
+    <script>
+      $('#scroll').scroll(fadeIn())
+    </script>
+    <script>
+      AOS.init();
+    </script>
+    
+</body>
+
+</html>
